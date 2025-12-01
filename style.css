@@ -1,0 +1,77 @@
+/* -------- CSS VARIABLES -------- */
+:root {
+  --primary-color: #f1903a;
+  --secondary-color: #1e293b;
+  --accent-color: #b2de5b;
+  --text-color: #334155;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+/* -------- GLOBAL RESET -------- */
+body {
+  /* Setting font-family base on system fonts for better performance */
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  /* Headings styling */
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+a {
+  /* Anchor tag styling */
+  text-decoration: none;
+}
+
+/* -------- NAVBAR -------- */
+.navbar {
+  /* Navbar styling */
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+}
+
+.navbar-title {
+  /* Navbar title styling */
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(
+    --primary-color
+  ) !important; /* Override Bootstrap default color by using !important */
+}
+
+.nav-link {
+  color: var(
+    --secondary-color
+  ) !important; /* Override Bootstrap default color by using !important */
+  font-weight: 500;
+  margin-left: 20px;
+  position: relative;
+}
+
+.nav-link::after {
+  /* Underline effect on hover with primary color */
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  /* Underline effect on hover */
+  width: 100%;
+}
