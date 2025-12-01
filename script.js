@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // SIMPLE FADE-IN ON SCROLL
   const sections = document.querySelectorAll("section");
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Reveal About section on scroll for experiment purposes for future use
   const aboutSection = document.querySelector("#about");
-
   const aboutObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -49,4 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   aboutObserver.observe(aboutSection);
+
+  // Reveal Timeline Items on Scroll only animate once
+  const timelineItems = document.querySelectorAll(".work-place");
+  const workObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  timelineItems.forEach((item) => workObserver.observe(item));
 });
