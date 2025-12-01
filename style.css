@@ -122,7 +122,7 @@ a {
 }
 
 .btn-my-work:hover {
-  background-color: var(--accent-color);
+  background-color: var(--bg-light);
   transform: translateY(-2px);
 }
 
