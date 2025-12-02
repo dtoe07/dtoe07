@@ -4,7 +4,7 @@
   --secondary-color: #1e293b;
   --accent-color: #b0966f;
   --text-color: #334155;
-  --bg-light: #f8fafc;
+  --bg-light: #f0f0f0;
   --bg-white: #ffffff;
   --bg-light-blue: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   --transition: all 0.3s ease;
@@ -39,7 +39,6 @@ a {
 
 /* -------- NAVBAR -------- */
 .navbar {
-  /* Navbar styling */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
@@ -47,7 +46,6 @@ a {
 }
 
 .navbar-title {
-  /* Navbar title styling */
   font-weight: 800;
   font-size: 1.5rem;
   color: var(
@@ -77,7 +75,6 @@ a {
 }
 
 .nav-link:hover::after {
-  /* Underline effect on hover */
   width: 100%;
 }
 
@@ -118,7 +115,7 @@ a {
 
 .btn-my-work {
   background-color: var(--primary-color);
-  color: var(--bg-white);
+  color: var(--secondary-color);
 }
 
 .btn-my-work:hover {
@@ -169,9 +166,13 @@ section.visible {
   border-radius: 12px;
 }
 
+.skills-container {
+  justify-content: center;
+}
+
 .skill-tag {
   background-color: var(--primary-color);
-  color: #1e293b;
+  color: var(--secondary-color);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -242,23 +243,29 @@ section.visible {
 }
 
 /* --- PROJECTS SECTION --- */
+#projects {
+  padding: 80px 0;
+  background-color: var(--bg-light-blue);
+}
+
 .project-card {
   border: none;
   border-radius: 15px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 20px 25px -5px var(--primary-color);
 }
 
 .project-details-btn {
   background-color: var(--primary-color);
-  color: var(--bg-white);
+  color: var(--secondary-color);
 }
 
 .repo-btn {
@@ -292,7 +299,7 @@ footer {
 /* -------- Contact Form -------- */
 #contact {
   padding: 80px 0;
-  background-color: #f8fafc;
+  background-color: var(--bg-light-blue);
 }
 
 .form-control {
@@ -324,7 +331,7 @@ footer {
 
 .btn-custom {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--secondary-color);
   padding: 12px 30px;
   border-radius: 50px;
   border: none;
@@ -333,6 +340,7 @@ footer {
 }
 
 .btn-custom:hover {
+  opacity: 0.9;
   transform: translateY(-2px);
   background-color: var(--secondary-color);
   color: white;

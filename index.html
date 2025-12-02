@@ -88,7 +88,11 @@
           <div class="col-md-6 order-md-2 order-1 text-center mb-4 mb-md-0">
             <div class="hero-img-container">
               <!-- Placeholder for user image -->
-              <img src="dinh.jpg" alt="Dinh Photo" class="hero-img" />
+              <img
+                src="dinh.jpg"
+                alt="Headshot of Dinh Nguyen"
+                class="hero-img"
+              />
             </div>
           </div>
         </div>
@@ -117,7 +121,7 @@
             </p>
 
             <div class="card border-0 about-card p-4">
-              <h4 class="mb-3">Technical Skills</h4>
+              <h3 class="mb-3">Technical Skills</h3>
               <div class="skills-container d-flex flex-wrap">
                 <span class="skill-tag">C++</span>
                 <span class="skill-tag">Python</span>
@@ -156,7 +160,7 @@
             <div class="work-place">
               <span class="work-date">2015 - 2024</span>
               <h3>Registrar</h3>
-              <h5 class="text-muted">Providence Health & Services</h5>
+              <h4 class="text-muted">Providence Health & Services</h4>
               <p class="mt-2">
                 - Contacting Patients: Reach out to patients prior to their
                 visits to update demographic and insurance information.
@@ -183,7 +187,7 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="bg-light animate-on-scroll">
+    <section id="projects" class="animate-on-scroll">
       <div class="container">
         <div class="text-center mb-5">
           <h2>My Projects</h2>
@@ -194,7 +198,7 @@
           <div class="col-md-4">
             <div class="project-card h-100 d-flex flex-column">
               <div class="card-body p-4 d-flex flex-column">
-                <h4 class="card-title">Oregon Liquor Checker Bot</h4>
+                <h3 class="card-title">Oregon Liquor Checker Bot</h3>
                 <p class="card-text text-muted flex-grow-1">
                   Built a daily web scraper using requests and BeautifulSoup to
                   check product availability on Oregon Liquor Search, running
@@ -226,7 +230,7 @@
           <div class="col-md-4">
             <div class="project-card h-100 d-flex flex-column">
               <div class="card-body p-4 d-flex flex-column">
-                <h4 class="card-title">Wi-Fi Network Penetration & Analysis</h4>
+                <h3 class="card-title">Wi-Fi Network Penetration & Analysis</h3>
                 <p class="card-text text-muted flex-grow-1">
                   Used Bettercap to capture WPA2 handshakes and perform
                   dictionary-based password cracking with Hashcat. Conducted
@@ -259,7 +263,7 @@
           <div class="col-md-4">
             <div class="project-card h-100 d-flex flex-column">
               <div class="card-body p-4 d-flex flex-column">
-                <h4 class="card-title">Providence Productivity Tracker</h4>
+                <h3 class="card-title">Providence Productivity Tracker</h3>
                 <p class="card-text text-muted flex-grow-1">
                   Built a custom productivity tracking webpage for Providence
                   Preregistration. Later enhanced with a department contact
@@ -356,20 +360,30 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Oregon Liquor Checker Bot</h5>
+            <h3 class="modal-title">Oregon Liquor Checker Bot</h3>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
+              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
-            <img src="bot-email_top.png" class="img-fluid rounded mb-3 w-100" />
             <img
-              src="bot-email-bottom.png"
+              src="bot-email_top.png"
+              alt="Screenshot of an email notification from the bot showing product availability."
               class="img-fluid rounded mb-3 w-100"
             />
-            <img src="bot-maps.png" class="img-fluid rounded mb-3 w-100" />
+            <img
+              src="bot-email-bottom.png"
+              alt="Screenshot of a Folium map embedded in an email, showing store locations."
+              class="img-fluid rounded mb-3 w-100"
+            />
+            <img
+              src="bot-maps.png"
+              alt="Screenshot of the web-hosted Folium map with store markers."
+              class="img-fluid rounded mb-3 w-100"
+            />
 
             <p>
               This bot scrapes the Oregon Liquor Search website daily using
@@ -379,14 +393,15 @@
               availability.
             </p>
 
-            <h6>What it does:</h6>
+            <h4>What it does:</h4>
             <ul>
               <li>Fetches daily product availability</li>
               <li>Parses structured HTML data</li>
               <li>Creates maps with all the stores that has stocks</li>
               <li>Hosts the maps on GitHub Pages</li>
               <li>Sends emails about product availability</li>
-              <li>Runs continuously via crontab with Git Action</li>
+              <li>Runs daily via crontab with Git Action</li>
+              <li>Runs completely free using GitHub's resources</li>
             </ul>
           </div>
         </div>
@@ -397,15 +412,20 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Wi-Fi Network Penetration & Analysis</h5>
+            <h3 class="modal-title">Wi-Fi Network Penetration & Analysis</h3>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
+              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
-            <img src="cracked.png" class="img-fluid rounded mb-3 w-100" />
+            <img
+              src="cracked.png"
+              alt="Screenshot of a terminal showing a successfully cracked Wi-Fi password using Hashcat."
+              class="img-fluid rounded mb-3 w-100"
+            />
 
             <p>
               Demonstrated network security techniques including: handshake
@@ -413,7 +433,7 @@
               assess the security posture of a WPA2-protected Wi-Fi network.
             </p>
 
-            <h6>Tools Used:</h6>
+            <h4>Tools Used:</h4>
             <ul>
               <li>Bettercap (WPA2 handshake capture)</li>
               <li>Hashcat (dictionary attack)</li>
@@ -428,16 +448,18 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Providence Productivity Tracker</h5>
+            <h3 class="modal-title">Providence Productivity Tracker</h3>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
+              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
             <img
               src="registrar-helper.png"
+              alt="Screenshot of the Providence Productivity Tracker user interface."
               class="img-fluid rounded mb-3 w-100"
             />
 
@@ -448,7 +470,7 @@
               management.
             </p>
 
-            <h6>Key Features:</h6>
+            <h4>Key Features:</h4>
             <ul>
               <li>Daily productivity calculations</li>
               <li>User-friendly UI for quick entries</li>
@@ -470,6 +492,7 @@
             class="text-white mx-2"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
             ><i class="fab fa-github fa-lg footer-icon"></i
           ></a>
           <a
@@ -477,6 +500,7 @@
             class="text-white mx-2"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
             ><i class="fab fa-linkedin fa-lg footer-icon"></i
           ></a>
         </div>
