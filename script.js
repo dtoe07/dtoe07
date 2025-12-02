@@ -1,6 +1,6 @@
 // add event listener to manipulate site behavior after DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // COLLAPSE NAVBAR ON LINK CLICK (FOR MOBILE)
+  // Close the Navbar on Link Click on hamburger menu for mobile view
   const navLinks = document.querySelectorAll(".nav-link");
   const navbarCollapse = document.getElementById("navbarNav");
   const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- SCROLL ANIMATION (INTERSECTION OBSERVER) ---
+  // --- Scrolling animation fading in using IntersectionObserver ---
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
