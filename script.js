@@ -15,55 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // SIMPLE FADE-IN ON SCROLL
-  const sections = document.querySelectorAll("section");
+  // --- SCROLL ANIMATION (INTERSECTION OBSERVER) ---
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          observer.unobserve(entry.target); // Only animate once
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 } // Trigger when 10% of the element is visible
   );
 
-  sections.forEach((sec) => observer.observe(sec));
-
-  // Reveal About section on scroll for experiment purposes for future use
-  const aboutSection = document.querySelector("#about");
-  const aboutObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          aboutSection.classList.add("visible");
-          aboutObserver.unobserve(aboutSection);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  aboutObserver.observe(aboutSection);
-
-  // Reveal Timeline Items on Scroll only animate once
-  const timelineItems = document.querySelectorAll(".work-place");
-  const workObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  timelineItems.forEach((item) => workObserver.observe(item));
+  // Observe any element with the "animate-on-scroll" class
+  const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
+  elementsToAnimate.forEach((element) => {
+    observer.observe(element);
+  });
 
   // Contact Form Validation
   const form = document.getElementById("contactForm");
