@@ -8,9 +8,9 @@ This is the source code for my personal portfolio website.
 
 - **Responsive Design:** Adapts to all screen sizes, from mobile to desktop.
 - **Interactive Scroll Animations:** Sections and elements fade into view as the user scrolls by using the `IntersectionObserver` API.
-- **Dynamic Skill Tags:** fun "floating" animation on the skill tags created with CSS `@keyframes`.
+- **Dynamic Skill Tags:** fun floating animation of the skill tags created with CSS `@keyframes`.
 - **Project Modals:** Pop up display detailed information about each project using Bootstrap 5 Modals.
-- **Form Validation:** The contact form provides instant visual feedback on whether the user's input is valid or not with styling effects.
+- **Form Validation:** The contact form provides instant visual feedback on whether the user's input is valid or not with styling effects using Bootstrap built-in methods and js.
 - **Accessibility Focused:** Built with accessibility in mind, addressing issues like color contrast, heading structure, and accessible names for interactive elements.
 
 ## How to Run This Site
