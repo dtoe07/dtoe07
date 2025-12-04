@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Add the viewport meta tag for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://lh3.googleusercontent.com/l6JAkhvfxbP61_FWN92j4ulDMXJNH3HT1DR6xrE7MtwW-2AxpZl_WLnBzTpWhCuYkbHihgBQ=w640-h400-e365"
+    />
+    <script src="Pre-Reg.js?"></script>
+    <title>Pre-Reg Helper</title>
+    <style>
+      /* Basic Styles */
+      body {
+        background: #fcfcfc;
+        text-align: center;
+        font-family: sans-serif; /* Using a standard sans-serif font */
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header {
+        background: #3f3f3f;
+        color: #ffffff;
+        padding: 10px;
+        margin: 0;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 26px;
+      }
+      .header p {
+        padding-bottom: 10px;
+        font-size: 14px;
+        color: #ccc;
+        margin: 0;
+      }
+
+      /* Main Content Layout using Flexbox */
+      .main-content {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        padding: 20px 2%;
+        gap: 20px; /* Adds space between columns */
+      }
+
+      .column {
+        flex: 1; /* Each column will take up equal space */
+        min-width: 280px; /* Minimum width before wrapping */
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Space between items in a column */
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Space between button and counter */
+      }
+
+      .action-btn {
+        flex-grow: 1; /* Button takes up available space */
+        font-size: 24px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .action-btn:hover {
+        background: #bababa;
+      }
+      .action-btn span {
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      .counter {
+        font-size: 40px;
+        font-weight: bold;
+        min-width: 40px;
+        text-align: left;
+      }
+
+      /* Total Column Styles */
+      .total-column {
+        background: #e0e0e0;
+        outline: 3px solid black;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+      }
+      .total-column .total-title {
+        font-size: 1.5em;
+      }
+      .total-column .total-count {
+        font-size: 5em;
+        color: #006400;
+        font-weight: bold;
+      }
+
+      /* Search Field Styles */
+      .search-container {
+        padding: 20px 2%;
+        text-align: left;
+      }
+      .search-container h2 {
+        font-size: 24px;
+        margin: 0 0 10px 0;
+      }
+      .search-container input {
+        font-size: 24px;
+        width: 100%;
+        box-sizing: border-box; /* Include padding in the width */
+        padding: 5px;
+      }
+      .result {
+        padding: 0;
+        margin: 10px 0 0 0;
+        max-height: 150px;
+        overflow-y: auto;
+        list-style: none;
+        border: 1px solid #ccc;
+      }
+      .result li {
+        font-size: 1em;
+        padding: 0.5em 1em;
+        line-height: 1.2em;
+      }
+      .result li:hover {
+        background: #f1f1f1;
+      }
+
+      /* --- MEDIA QUERY FOR RESPONSIVENESS --- */
+      /* On screens smaller than 900px, stack the columns */
+      @media (max-width: 900px) {
+        .main-content {
+          flex-direction: column;
+        }
+        /* Make the total column appear first on mobile */
+        .total-column {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Registrar Helper</h1>
+      <p>Copyright Ⓒ 2018 Dinh Nguyen</p>
+    </div>
+
+    <div class="main-content">
+      <!-- Calling Buttons Column -->
+      <div class="column">
+        <div class="item">
+          <button onclick='onClick("outCall")' class="action-btn">
+            251
+            <span>Complete Pre-Reg, Contact Required</span>
+          </button>
+          <a id="outCall" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("attempt")' class="action-btn">
+            248
+            <span>Patient Contact Attempt</span>
+          </button>
+          <a id="attempt" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("research")' class="action-btn">
+            236
+            <span>Conducted, Research In Epic</span>
+          </button>
+          <a id="research" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("ptPaid")' class="action-btn">
+            934
+            <span>Provided Estimate – Paid Full</span>
+          </button>
+          <a id="ptPaid" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("ptPartial")' class="action-btn">
+            936
+            <span>Provided Estimate – Partial Payment</span>
+          </button>
+          <a id="ptPartial" class="counter">0</a>
+        </div>
+      </div>
+
+      <!-- HARing Buttons Column -->
+      <div class="column">
+        <div class="item">
+          <button onclick='onClick("outHar")' class="action-btn">
+            250
+            <span>Complete Pre-Reg, No Contact Required</span>
+          </button>
+          <a id="outHar" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("makeHar")' class="action-btn">
+            452
+            <span>HAR Created</span>
+          </button>
+          <a id="makeHar" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("deptCall")' class="action-btn">
+            238
+            <span>Contact Physician/Department</span>
+          </button>
+          <a id="deptCall" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("payOnsite")' class="action-btn">
+            935
+            <span>Provided Estimate – Collect Onsite</span>
+          </button>
+          <a id="payOnsite" class="counter">0</a>
+        </div>
+        <div class="item">
+          <button onclick='onClick("toBeBilled")' class="action-btn">
+            974
+            <span>Provided Estimate – Request to be Billed</span>
+          </button>
+          <a id="toBeBilled" class="counter">0</a>
+        </div>
+      </div>
+
+      <!-- Total Calls Column -->
+      <div class="column total-column">
+        <a class="total-title">Total Productive Time</a>
+        <a id="total" class="total-count">0</a>
+      </div>
+    </div>
+
+    <!-- Search Field -->
+    <div class="search-container">
+      <h2>CAS Wiki Search: language codes, dept#...</h2>
+      <input
+        id="lang"
+        oninput="realTimeSearch()"
+        type="search"
+        placeholder="Search..."
+      />
+      <ul class="result">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>
